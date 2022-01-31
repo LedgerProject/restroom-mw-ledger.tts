@@ -1,0 +1,47 @@
+{
+  "name": "@restroom-mw/ledger.tts",
+  "version": "0.9.0",
+  "description": "Ledger TTS middleware for Restroom",
+  "keywords": [
+    "blockchain",
+    "ledger",
+    "tts",
+    "api",
+    "nodejs"
+  ],
+  "author": "Jorge Fernández",
+  "homepage": "https://github.com/LedgerProject/restroom-mw-ledger.tts",
+  "license": "AGPL-3.0",
+  "main": "dist/index.js",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LedgerProject/restroom-mw-ledger.tts.git"
+  },
+  "scripts": {
+    "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
+    "links": "yarn link",
+    "unlinks": "yarn unlink",
+    "watch": "tsc -b tsconfig.json -w",
+    "build": "tsc -b tsconfig.json"
+  },
+  "bugs": {
+    "url": "https://github.com/LedgerProject/restroom-mw-ledger.tts/issues"
+  },
+  "devDependencies": {
+    "@types/supertest": "^2.0.10",
+    "async": "^3.2.0",
+    "async-retry": "^1.3.1",
+    "axios": "^0.21.1"
+  },
+  "dependencies": {
+    "sequelize": "^5.21.7",
+    "sqlite3": "^5.0.0"
+  }
+}
