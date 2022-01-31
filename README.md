@@ -27,7 +27,7 @@ The syntax of the actions is available here.
 Use this Zencode:
 
 ```
-# Here we are telling Zenroom wjere the Ledger service is and which Ledger endpoint call 
+# Here we are telling Zenroom where the Ledger service is and which Ledger endpoint call 
 Given I have a ledger uri named 'uri'
 Given that I have a ledger endpoint named 'endpoint'
 Given that I have a method named 'method'
