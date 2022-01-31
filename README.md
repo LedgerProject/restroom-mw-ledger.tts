@@ -59,13 +59,15 @@ Use this Zencode:
 
 ```
 # Here we are telling Zenroom which Ledger endpoint call 
-Given that I have a ledger endpoint named 'get_stamp'
+Given I have a ledger uri named 'uri'
+Given that I have a ledger endpoint named 'endpoint'
+Given that I have a method named 'method'
 
 # here we are telling Zenroom to 'allocate' a string dictionary, that 
 # we'll use to store the data read from the database
 Given I have a 'string dictionary' named 'myResult'
 
-# Here we are reading the stamp with hash '2e016af539de750e1d6d396e383aa0b011c0e0e8b6861557679985894fac3eb2' of the table and database we declared before
+# Here we are reading the stamp with hash '2e016af539de750e1d6d396e383aa0b011c0e0e8b6861557679985894fac3eb2'
 Given I read the record '2e016af539de750e1d6d396e383aa0b011c0e0e8b6861557679985894fac3eb2' save the result into 'myResult'
 
 Then print 'myResult'

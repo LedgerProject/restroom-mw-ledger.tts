@@ -1,5 +1,5 @@
 import { ObjectLiteral } from "@restroom-mw/core/src/types";
-import { EXTERNAL_CONNECTION } from "./actions";
+import { EXTERNAL_BASEURI } from "./actions";
 
 const checkForNestedBoolean = (obj: any) => {
   function recurse(obj: ObjectLiteral, current: string) {
@@ -29,7 +29,7 @@ const runChecks = (
 ) => {
   const contentKeys = Object.keys(content);
   endpoints.forEach((endpoint: { urlKey: string }) => {
-    //Check that all endpoints (urlKeys) have been defined using statement EXTERNAL_CONNECTION
+    //Check that all endpoints (urlKeys) have been defined using statement EXTERNAL_BASEURI
     if (externalSourceKeys.includes(endpoint.urlKey) === false) {
       console.log(
         "FAILED CHECK: endpoint has not been defined in zencode: " +
@@ -37,7 +37,7 @@ const runChecks = (
       );
       throw new Error(`[HTTP]
               Endpoint "${endpoint.urlKey}" has not been defined in zencode, please define it with
-              the following zencode sentence "${EXTERNAL_CONNECTION}"`);
+              the following zencode sentence "${EXTERNAL_BASEURI}"`);
     }
 
     // check that all endpoints (urlKeys) are properties in either data or keys
@@ -60,7 +60,7 @@ const checkForDuplicates = (externalSourceKeys: string[]) => {
   if (duplicateFound) {
     throw new Error(`[HTTP]
           Found a duplicate. Please ensure there are no duplicates
-          when defining endpoints in "${EXTERNAL_CONNECTION}"`);
+          when defining endpoints in "${EXTERNAL_BASEURI}"`);
   }
 }
 
@@ -68,7 +68,7 @@ const checkEndpointDefined = (externalSourceKeys: string[]) => {
   if (!externalSourceKeys.length)
     throw new Error(`[HTTP]
             Endpoints are missing, please define them with the
-            following zencode sentence "${EXTERNAL_CONNECTION}"`);
+            following zencode sentence "${EXTERNAL_BASEURI}"`);
 }
 
 function* chunks(arr: string[], n: number) {

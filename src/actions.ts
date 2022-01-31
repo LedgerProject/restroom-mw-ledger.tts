@@ -1,4 +1,5 @@
-export const EXTERNAL_CONNECTION = "have a endpoint named {}";
-export const EXTERNAL_OUTPUT = "connect to {} and save the output into {}";
-export const PASS_OUTPUT = "pass the output to {}";
-export const POST_AND_SAVE_TO_VARIABLE = "connect to {} and pass it the content of {} and save the output into {}";
+export const EXTERNAL_BASEURI = "have a ledger uri named {}";
+export const ENDPOINT = "have a ledger endpoint named {}";
+export const METHOD = "have a method named {}";
+export const SAVE_OUTPUT = "save {} into ledger";
+export const GET_AND_SAVE_TO_VARIABLE = "read the record {} save the result into {}";

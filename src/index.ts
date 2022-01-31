@@ -5,7 +5,7 @@ import axios from "axios";
 import { NextFunction, Request, Response } from "express";
 import https from "https";
 import {
-  EXTERNAL_CONNECTION,
+  EXTERNAL_BASEURI,
   EXTERNAL_OUTPUT,
   PASS_OUTPUT,
   POST_AND_SAVE_TO_VARIABLE,
@@ -32,8 +32,8 @@ export default (req: Request, res: Response, next: NextFunction) => {
       let { zencode, keys, data } = params;
       content = rr.combineDataKeys(data, keys);
 
-      if (zencode.match(EXTERNAL_CONNECTION)) {
-        externalSourceKeys = zencode.paramsOf(EXTERNAL_CONNECTION);
+      if (zencode.match(EXTERNAL_BASEURI)) {
+        externalSourceKeys = zencode.paramsOf(EXTERNAL_BASEURI);
         checkForDuplicates(externalSourceKeys);
       }
 
