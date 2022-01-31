@@ -20,7 +20,7 @@ app.use("/api/*", zencode);
 
 ## Zencode usage
 
-The syntax of the actions is available here.
+The syntax of the actions is available [here]("src/actions.ts").
 
 ## Store data on the Ledger Timestamping Service
 
